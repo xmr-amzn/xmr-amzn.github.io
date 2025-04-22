@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^earm$ earn.html [L]
+RewriteRule ^$ index.html [L]

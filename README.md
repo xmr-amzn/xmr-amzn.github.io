@@ -4,4 +4,4 @@ The ultimate goal is to integrate steps in this guide into XMR Bazaar to make or
 
 You can use this guide today to manually create Amazon Wishlists, and XMR Bazaar listings to purchase items. And earn non-KYC Monero by "selling" Amazon items using XMR Bazaar listings.
 
-All the instructions are located in static html files rendered on https://xmr-amzn.github.io/
+All the instructions are located in static html files rendered on [xmr-amzn.github.io](https://xmr-amzn.github.io/)

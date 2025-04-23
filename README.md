@@ -1,7 +1,7 @@
-This is a "guide" to using XMR Bazaar for purchasing via Amazon wishlists.
+This is a "guide" for using [XMR Bazaar](xmrbazaar.com) to purchase items via Amazon wishlists. You can earn non-KYC Monero by purchasing items. And get a discount by spending Monero for Amazon items.
 
-The ultimate goal is to integrate the steps in this guide into XMR Bazaar and more easily allow ordering from Amazon using XMR, and provide a non-KYC option to earn Monero by purchasing items via Amazon using XMRBazaar.com.
+The ultimate goal is to integrate steps in this guide into XMR Bazaar to make ordering from Amazon using XMR easier, and make this guid obsolete.
 
-It's possible today. You can manually create listings for Amazon on XMRBazaar and purchase on Amazon to earn Monero.
+You can use this guide today to manually create Amazon Wishlists, and XMR Bazaar listings to purchase items. And earn non-KYC Monero by "selling" Amazon items using XMR Bazaar listings.
 
-All the instructions are located in static html files rendered on https://xmr-amzn.github.io/ 
+All the instructions are located in static html files rendered on https://xmr-amzn.github.io/

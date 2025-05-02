@@ -1,4 +1,40 @@
---- How to earn XMR purchasing gifts on Amazon ---
-Find a listing on XMR Bazaar that offers XMR for Amazon purchases.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+  <link rel="icon" sizes="128x128" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <title>XMR & Amazon</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div id="content">
+      <h1>Earn Monero</h1>
+      <p>Below are steps to find listings on <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a> and purchase product via Amazon with fiat to receive non-KYC XMR. You only need to purchase the item and supply tracking information. Once the item is delivered, you'll receive the agreed XMR amount.</p>
+      <ol class="xl1">
+        <li>Search XMR Bazaar for items to purchase on Amazon</li>
+        <li>Accept Offer</li>
+        <li>Purchase Items. Check "this is a gift" and ship to the shoppers whishlist address</li>
+        <li>When item ships, get tracking number and post on XMR Bazaar</li>
+        <li>Wait for item delivery and receive XMR</li>
+      </ol>
 
-Check the "Earn" section, or search "Amazon" if the seller put Amazon in the listing title..
+      <p>This is a bookmarklet to extract tracking numbers from Amazon tracking pages.</p>
+      <p>Right click this link <a href="javascript:(function(){var jsCode=document.createElement(&apos;script&apos;);jsCode.setAttribute(&apos;src&apos;,&apos;https://xmr-amzn.github.io/bookmarklet.js&apos;);document.body.appendChild(jsCode);}());">Get Tracking Number</a> and add to your bookmarks.</p>
+      <p>Then visit your Amazon tracking page and select this bookmarklet (from your bookmarks).</p>
+      - <a href="https://github.com/xmr-amzn">m3c</a><br/>
+        (created for <a href="https://xmrbazaar.com/search/earn-xmr/" target="_blank">XMR Bazaar</a>)
+
+    </div>
+  </main>
+  <footer></footer>
+  <div id="popup"></div>
+  <div id="popgray"></div>
+</body>
+</html>

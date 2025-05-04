@@ -1,6 +1,7 @@
 (function() {
   try {
-    const items = Array.from(document.querySelectorAll('ul#g-items'));
+    const items = JSON.parse(document.querySelector('[data-add-to-cart]').innerText);
+
 //    const trackingId = pageState.trackingId.trim();
 //    const amazonOrderId = location.href.match(/orderId=(\d{3}-\d{7}-\d{7})/)[1];
     let statusText = '';

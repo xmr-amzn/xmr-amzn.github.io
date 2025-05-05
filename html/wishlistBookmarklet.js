@@ -2,6 +2,7 @@
   try {
     const elements = document.querySelectorAll('[data-add-to-cart]');
 
+    var alertTxt='Wishlist contains...';
     elements.forEach(element => {
       const jsonString = element.getAttribute('data-add-to-cart');
       const validJsonString = jsonString.replace(/&quot;/g, '"');
@@ -9,11 +10,12 @@
       try {
         const jsonData = JSON.parse(validJsonString);
         console.log('Parsed JSON:', jsonData);
+        alertTxt=alertTxt+'ASIN:'+jsonData['asin']+' Qty:'+jsonData['quantity']+' Price:$'+jsonData['price']+"\r\n";
       } catch (error) {
         console.error('Error parsing JSON for element:', element, error);
       }
     });
-
+    alert(alertTxt);
 
 /*
 try {

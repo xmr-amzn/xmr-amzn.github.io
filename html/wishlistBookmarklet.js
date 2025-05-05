@@ -1,11 +1,20 @@
 (function() {
   try {
-    const items = JSON.parse(document.querySelector('[data-add-to-cart]').innerText);
+    const elements = document.querySelectorAll('[data-add-to-cart]');
 
-//    const trackingId = pageState.trackingId.trim();
-//    const amazonOrderId = location.href.match(/orderId=(\d{3}-\d{7}-\d{7})/)[1];
-    let statusText = '';
-console.log(items);
+    elements.forEach(element => {
+      const jsonString = element.getAttribute('data-add-to-cart');
+      const validJsonString = jsonString.replace(/&quot;/g, '"');
+      console.log('Valid JSON String:', validJsonString);
+      try {
+        const jsonData = JSON.parse(validJsonString);
+        console.log('Parsed JSON:', jsonData);
+      } catch (error) {
+        console.error('Error parsing JSON for element:', element, error);
+      }
+    });
+
+
 /*
 try {
       statusText = pageState.promise.promiseMessage.trim();

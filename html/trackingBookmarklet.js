@@ -18,10 +18,10 @@
     if (trackingId) {
       alert("Amazon Order ID: " + amazonOrderId + "\nTracking Number: " + trackingId);
     } else {
-      alert("It looks like the package hasn't been shipped yet.\nTry again later once it's been shipped");
+      alert("It looks like the package hasn't been shipped yet.\nTry again later once it has shipped.");
     }
   } catch (error) {
     console.log('Tracking-Bookmarklet Error:', error);
-    alert("Unable to retrieve Tracking Number.\nAre you sure you're on an Amazon tracking page?");
+    alert("Unable to retrieve Tracking Number.\nAre you sure you're on an Amazon tracking page? Go to the Amazon tracking page for your order, then click the bookmark.");
   }
 })();

@@ -22,6 +22,6 @@
     }
   } catch (error) {
     console.log('Tracking-Bookmarklet Error:', error);
-    alert("Unable to retrieve Tracking Number.\nAre you sure you're on an Amazon tracking page? Go to the Amazon tracking page for your order, then click the bookmark.");
+    alert("Unable to retrieve Tracking Number.\n\nAre you sure you're on an Amazon tracking page?\n\nGo to the Amazon tracking page for your order, then click the bookmark.");
   }
 })();

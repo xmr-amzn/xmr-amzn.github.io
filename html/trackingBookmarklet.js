@@ -12,16 +12,16 @@
     }
 
     if (!amazonOrderId) {
-      alert("Cannot retrieve amazon order ID.  are you sure you're on an Amazon tracking page");
+      alert("Cannot retrieve Amazon Order ID.\n\nAre you on the Amazon tracking page?");
     }
 
     if (trackingId) {
       alert("Amazon Order ID: " + amazonOrderId + "\nTracking Number: " + trackingId);
     } else {
-      alert("It looks like the package hasn't been shipped yet.\nTry again later once it has shipped.");
+      alert("It looks like the package hasn't shipped (no tracking number found).\nTry again once it has shipped.");
     }
   } catch (error) {
     console.log('Tracking-Bookmarklet Error:', error);
-    alert("Unable to retrieve Tracking Number.\n\nAre you sure you're on an Amazon tracking page?\n\nGo to the Amazon tracking page for your order, then click the bookmark.");
+    alert("Unable to retrieve Tracking Number.\n\nAre you on the Amazon tracking page?\n\nGo to the Amazon tracking page for your order, then click the bookmark.");
   }
 })();

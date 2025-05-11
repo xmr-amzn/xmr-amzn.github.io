@@ -18,18 +18,97 @@
       <h1>Earn Monero</h1>
       <p>Below are steps to find listings on <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a> and purchase product via Amazon with fiat to receive non-KYC XMR. You only need to purchase the item and supply tracking information. Once the item is delivered, you'll receive the agreed XMR amount.</p>
       <ol class="xl1">
-        <li>Search XMR Bazaar for items to purchase on Amazon</li>
-        <li>Accept Offer</li>
-        <li>Purchase Items. Check "this is a gift" and ship to the shoppers whishlist address</li>
-        <li>When item ships, get tracking number and post on XMR Bazaar</li>
-        <li>Wait for item delivery and receive XMR</li>
+        <li><a href="#searchXMRBazaar">Search XMR Bazaar</a></li>
+        <li><a href="#makeOffer">Make an Offer</a></li>
+        <ol class="xl2">
+          <li><a href="#confirmOrder">Confirm Order</a></li>
+        </ol>
+        <li><a href="#purchaseItems">Purchase Items</a></li>
+        <ol class="xl2">
+          <li><a href="#checkout">Select Gift Registry address</a></li>
+          <li><a href="#placeOrder">Place Order</a></li>
+        </ol>
+        <li><a href="#getTracking">Provide Tracking</a></li>
+        <li><a href="#confirmDelivery">Confirm Delivery</a></li>
+        <ol class="xl2">
+          <li><a href="#leaveReview">Leave a Review</a></li>
+        </ol>
       </ol>
 
-      <p>This is a bookmarklet to extract tracking numbers from Amazon tracking pages.</p>
-      <p>Right click this link <a href="javascript:(function(){var jsCode=document.createElement(&apos;script&apos;);jsCode.setAttribute(&apos;src&apos;,&apos;https://xmr-amzn.github.io/bookmarklet.js&apos;);document.body.appendChild(jsCode);}());">Get Tracking Number</a> and add to your bookmarks.</p>
-      <p>Then visit your Amazon tracking page and select this bookmarklet (from your bookmarks).</p>
-      - <a href="https://github.com/xmr-amzn">m3c</a><br/>
-        (created for <a href="https://xmrbazaar.com/search/earn-xmr/" target="_blank">XMR Bazaar</a>)
+      <h2 id="searchXMRBazaar">Search for Amazon items on XMR Bazaar</h2>
+      <div class="dent">
+        Currently, Amazon wishlist items can be found in the <a href="https://xmrbazaar.com/search/buy-product/" target="_blank">Earn XMR / Sell</a> section of the XMR Bazaar website.
+        <p>You can look for titles like "<b>Buy me ... on Amazon</b>", or search this section for "Amazon" or "Wishlist" to find listings where you can earn Monero for purchasing on Amazon. <a href="#" class="popup" data="browsing-wishlists"><img class="dev" src="gears.svg" /></a></p>
+        <img src="sampleListing.png" class="mini" />
+        <p>You can also "Subscribe to Search" to add to your "Saved Searches"</p>
+        <img src="savedSearch.png" class="mini" />
+      </div>
+
+      <h2 id="makeOffer">Make an Offer</h2>
+      <div class="dent">
+        <p>When you find a item that fits your needs (the amount you want to spend). Click "Make an offer".</p>
+        <img src="makeOffer.png" class="mini" />
+      </div>
+
+      <h3 id="confirmOrder">Confirm Order</h3>
+      <div class="dent">
+        <p>Enter your Monero address and click "Confirm Order" to lock in your Monero amount at the current market price.</p>
+        <img src="confirmOrder.png" class="mini" />
+      </div>
+
+      <h2 id="purchaseItems">Purchase Items</h2>
+      <div class="dent">
+        Find the Amazon wishlist URL in the description. Visit the link and add the items to your cart. When adding to your cart...
+        <ol>
+          <li>Verify they are for the proper user's wishlist (i.e. "For m3c's Wish List").</li>
+          <li>Make sure all the items have "This is a gift" checked</li>
+          <li>Verify the correct quantities and price of each item.</li>
+        </ol> 
+        <img src="viewWishlist.png" class="mini" />
+      </div>
+
+      <h3 id="checkout">Select Gift Registry address</h3>
+      <div class="dent">
+        <p>When checking out at Amazon. Be sure to select the user's Gift Registry Address. Amazon may default to *your* address, so make sure it will be shipped to the user's address.</p>
+        <img src="giftAddress.png" class="mini" />
+        <p>Also verify the gift options during checkout. You may want to delete your real name and enter your XMR Bazaar username.</p>
+        <img src="giftOptions.png" class="mini" />
+        <p>"Email the recipient a copy of their gift receipt" is not necessary, so no need to share email. Checking "This item is a gift" will include a paper copy with the package.</p>
+      </div>
+
+      <h3 id="checkout">Place Order</h3>
+      <div class="dent">
+        Place your order on Amazon.
+        <p>Login to XMR Bazaar and message the shopper that the order was placed and include the order number and estimated delivery date. <a href="#" class="popup" data="order-placed"><img class="dev" src="gears.svg" /></a></p>
+        <img src="orderConfirmation.png" class="mini" />
+      </div>
+
+      <h2 id="getTracking">Provide Tracking</h2>
+      <div class="dent">
+        Amazon won't have a tracking number until the item ships. Once you receive notification that the item has shipped, you'll need to extract the tracking number from the Amazon "Track Package" page. <a href="#" class="popup" data="tracking-bookmarklet"><img class="dev" src="gears.svg" /></a>
+        <p>First, save a custom "bookmarklet" by right-clicking the following link (<a href="javascript:(function(){var jsCode=document.createElement(&apos;script&apos;);jsCode.setAttribute(&apos;src&apos;,&apos;https://xmr-amzn.github.io/trackingBookmarklet.js&apos;);document.body.appendChild(jsCode);}());">Get Tracking Number</a>) and add to your bookmarks.</p>
+        <p>If you don't have an option to right-click "Bookmark Link...", use right-click "Copy Link..." then add a new bookmark in your browser's Bookmark Manager (paste the link to create the bookmark).</p>
+        <img src="bookmarkManager.png" class="mini" />
+        <p>With the bookmarklet in your bookmark list, Go to your <a href="https://www.amazon.com/gp/css/order-history" target="_blank">Amazon Orders</a> page and select "Track Package" to view shipping status. Then click the ("Get Tracking Number") bookmarklet from your bookmarks. You should see a popup that contains the Amazon Order & Tracking Number.</p>
+        <img src="trackingInfo.png" class="mini" />
+        <p>Paste these numbers into an XMR Bazaar message to the shopper. <a href="#" class="popup" data="order-tracking"><img class="dev" src="gears.svg" /></a></p>
+        <img src="trackingMessage.png" class="mini" />
+        <p>Note : Once the bookmarklet is in your bookmarks, it can be used for future orders. <a href="#" class="popup" data="tracking-bookmarklet"><img class="dev" src="gears.svg" /></a></p>
+      </div>
+
+      <h2 id="confirmDelivery">Confirm Delivery</h2>
+      <div class="dent">
+        Should you wish to monitor delivery, you can track via the shipping provider's website (UPS, Fedex, etc.). Sites like <a href="https://www.aftership.com/track" target="_blank">AfterShip</a> or <a href="https://parcelsapp.com/" target="_blank">Parcels</a> can help determine which shipping provider was used. <a href="#" class="popup" data="tracking-status"><img class="dev" src="gears.svg" /></a>
+        <p>Once delivered, the shopper should send your XMR to your address. If you determine the package was delivered, but haven't received your XMR, contact the shopper. This is also an opportunity to rate the shopper based on the timeliness of their payment.</p>
+      </div>
+
+      <h3 id="leaveReview">Leave a review</h3>
+      <div class="dent">
+        If everything went well, leave a positive review.
+<!--
+        <p>Also consider sending a small donation to XMR Bazaar for making the transaction possible. XMR Bazaar does not charge any fees for using the website.</p>
+-->
+      </div>
 
     </div>
   </main>

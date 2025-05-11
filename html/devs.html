@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+  <link rel="icon" sizes="128x128" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <title>XMR & Amazon</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div id="content">
+      <h1>Developers</h1>
+      <p>This page contains notes discussing how Wishlist integration with XMR Bazaar could work. It's recommended to read the <a href="/shop">/shop</a> & <a href="/earn">/earn</a> pages to view these notes in context.</p>
+      <ol class="xl1">
+        <li><a href="#listing-notes">Listing Notes</a></li>
+        <ol class="xl2">
+          <li><a href="#listing-type">Create a Wishlist Category</a></li>
+          <li><a href="#private-wishlist">Private Wishlists</a></li>
+          <li><a href="#calc-wishlist">Calculate Wishlist Price</a></li>
+          <li><a href="#browsing-wishlists">Browsing Wishlist Items</a></li>
+          <li><a href="#reusable-wishlists">Reusable Wishlists</a></li>
+          <li><a href="#simplified-listing">Simplified Listing</a></li>
+        </ol>
+        <li><a href="#order-notes">Order Notes</a></li>
+        <ol class="xl2">
+          <li><a href="#order-status">Order Statuses</a></li>
+          <li><a href="#detecting-purchases">Detecting Purchases</a></li>
+          <li><a href="#tracking-number">Tracking/Order Field</a></li>
+          <li><a href="#tracking-bookmarklet">Tracking Bookmarklet</a></li>
+        </ol>
+        <li><a href="#user-notes">User Notes</a></li>
+        <ol class="xl2">
+          <li><a href="#definitions">Definitions</a></li>
+        </ol>
+      </ol>
+
+      <h2 id="listing-notes">Listing Notes</h2>
+      <p>Notes related to creating & editing listings.</p>
+
+      <section id="listing-type">
+        <h3>Create a Wishlist Category</h3>
+        <p>Wishlist listings will be processed & displayed differently than other listings. To accomodate this, create a wishlist category under the "Spend" type.</p>
+        <img src="post.png" class="mini"/>
+        <p>This new category will display under the "<a href="https://xmrbazaar.com/search/earn-xmr/" target="_blank">Earn XMR</a>" menu as a "Purchase" (i.e. You're purchasing products & also purchasing Monero)</p>
+        <img src="earnmenu.png" class="mini"/>
+        <p>This new type of listing will contain additional fields for storing wishlist urls, fiat price, & discount(%).</p>
+      </section>
+
+      <section id="private-wishlist">
+        <h3>Private Wishlists</h3>
+        <p>Wishlists are public on Amazon. This is how people can view each other's lists and purchase items.</p>
+        <p>Exposing the wishlist URL on XMR Bazaar could give Amazon the opportunity to scrape these unique URLs to match up XMR Bazaar users exchanging products for XMR.</p>
+        <p>Treating these URLs private on XMR Bazaar will help mitigate this possibility. i.e. Require users to login and accept an offer before viewing the wishlist URL.</p>
+        <p>XMR Bazaar could query Amazon for the item ID's to display products publicly without exposing the wishlist url.</p>
+      </section>
+
+      <section id="calc-wishlist">
+        <h3>Calculating Wishlist Price</h3>
+        <p>This guide has the user calculating the fiat price of their wishlist. In the future, XMR Bazaar would store the Amazon Wishlist URL with the listing. XMR Bazaar could use this URL to scrape Amazon for product IDs & prices.</p>
+        <p>An <a href="https://developer-docs.amazon.com/amazon-business/docs/product-search-api-v1-reference" target="_blank">Amazon Product API</a> exists, but I don't believe XMR Bazaar would qualify. API access may have been an issue for Purse.io. While there may be more maintenance keeping up with changes to Amazon's content changing, I believe scraping the Wishlist URL would be more "stealthy" and draw less suspicion.</p>
+        <p>Perhaps a <a href="https://en.wikipedia.org/wiki/Bookmarklet" target="_blank">bookmarklet</a> or browser extension could be built to gather data from the user's browser/IP instead of the XMR Bazaar server.</p>
+      </section>
+
+      <section id="browsing-wishlists">
+        <h3>Browsing Wishlists</h3>
+        <p>From an earners perspective, they only care about the fiat amount they will spend, and how much Monero they will receive. They're not concerned with the product.</p>
+        <p>For the Wishlist category. XMR Bazaar would sort listings by discount/fee and price instead of the standard gallery display. The item photo & details can be displayed once they find the amount they want to spend.</p>
+        <p>The Amazon fiat price & discount can be stored with the listing and calculate what is received based on the current XMR price.</p>
+        <div class="example">1 XMR = $275.33</div>
+        <table class="example"><tr><th>Discount / Fee</th><th>Spend (USD)</th><th>Receive<br/>XMR (USD)</th><th>Rating</th></tr>
+          <tr><td>5%</td><td>$29.99</td><td>0.10348<br/>($28.49)</td><td>⭐ 5 (12)</td><td><a href="#">View</a></td></tr>
+          <tr><td>5%</td><td>$43.66</td><td>0.15064<br/>($41.48)</td><td>⭐ 4 (6)</td><td><a href="#">View</a></td></tr>
+          <tr><td>10%</td><td>$37.33</td><td>0.12202<br/>($33.61)</td><td>⭐ 5 (3)</td><td><a href="#">View</a></td></tr>
+          <tr><td>10%</td><td>$49.99</td><td>0.16341<br/>($44.99)</td><td>⭐ 4 (17)</td><td><a href="#">View</a></td></tr>
+          <tr><td>25%</td><td>$19.99</td><td>0.05445<br/>($14.99)</td><td>⭐ 0 (0)</td><td><a href="#">View</a></td></tr>
+          <tr><td>30%</td><td>$104.57</td><td>0.26586<br/>($73.20)</td><td>⭐ 3 (2)</td><td><a href="#">View</a></td></tr>
+        </table>
+        <p>If the shopper specifies a fixed Monero amount, then the discount will fluctuate based on the current XMR price.</p>
+      </section>
+
+      <section id="reusable-wishlists">
+        <h3>Reusable Wishlists</h3>
+        <p>Since Amazon wishlists can be re-used, and XMR Bazaar would be storing the wishlist URL...</p>
+        <p>When a duplicate wishlist url is detected/reused, delete the same url from any old listings. Since products likely will no longer match the old listing.</p>
+      </section>
+
+      <section id="simplified-listing">
+        <h3>Simplified Listing</h3>
+        <p>The Add Listing form can be simplified for wishlist items.</p>
+        <p>Once they paste a wishlist URL, the description, images, fiat price,  can be automatically generated from the wishlist data.</p>
+        <p>The user would select a discount rate to calculate the monero price.</p>
+        <img src="zzz.png" class="mini"/>
+        wishlist url
+        Items / price / Photos (scraped)
+        Total Price (calculated)
+        Discount slider (which determines Monero price)
+        fixed monero price checkbox (not recommended)
+        //delivery is always "Physical"
+        //shipping is unimportant (pickup/domestic/international)
+        Country (for currency - could be derived from wishlist url (amazon.com, amazon.ca, amazon.uk, etc.))
+        payment (direct/escrow/bonded)
+        private listing checkbox
+      </section>
+
+      <h2 id="order-notes">Order Notes</h2>
+      <p>Notes related to order tracking.</p>
+
+      <section id="order-status">
+        <h3>Order Status</h3>
+        <p>The current order status goes from "Pending" to "Unpaid" once the order is accepted. This suggests the shopper should pay immediately after accepting the order. Wishlist ordering would have different statuses. I believe this only requires one new status ("Ordered").</p>
+        <table class="statuses">
+          <tr><th>Wishlist<br/>Status</th><th>Description</th><th>XMR Bazaar<br/>Status</th></tr>
+          <tr><td>Active</td><td>New listing</td><td>Active</td></tr>
+          <tr><td>Accepted</td><td>Someone agreed to fulfill order</td><td>Pending</td></tr>
+          <tr><td>Ordered</td><td>Order Placed / Amazon # Submitted</td><td> &nbsp; </td></tr>
+          <tr><td>Shipped</td><td>Tracking Number Submitted</td><td>Shipped</td></tr>
+          <tr><td>Delivered</td><td>Awaiting Payment</td><td>Unpaid</td></tr>
+          <tr><td>Complete</td><td>Monero Paid / TX Submitted</td><td>Complete</td></tr>
+        </table>
+        <p>In this sequence, "Unpaid" doesn't happen until the end of the process. I prefer "Delivered" since the shipping company has delivered the package.</p>
+        <p>"Ordered", "Shipped", and "Delivered" statuses might be automatically detectable (Is it a valid amazon order number?, Is it a valid tracking number?, Was the tracking number delivered?), but not critical if the users can validate each other.</p>
+      </section>
+
+      <section id="detecting-purchases">
+        <h3>Detecting Purchases</h3>
+        <p>Monitoring the Amazon wishlist for changes in "Needs" may be a way to detect if an item has been purchased and automatically switch to "Ordered" status.</p>
+        <p>This would likely require XMR Bazaar maintain a "copy" of the wishlist contents and quantities to compare with Amazon's information.</p>
+        <p>Possibly an "enhancement" after wishlist ordering is functional.</p>
+      </section>
+
+      <section id="tracking-number">
+        <h3>Tracking/Order Field</h3>
+        <p>Would need to store the Amazon Order ID, and Tracking number updated by the buyer. Currently, these are done via messages.</p>
+        <p>Possibly store a tracking URL, to (later) automatically check delivery status.</p>
+      </section>
+
+      <section id="tracking-bookmarklet">
+        <h3>Tracking Bookmarklet</h3>
+        <p>The <a href="https://en.wikipedia.org/wiki/Bookmarklet" target="_blank">bookmarklet</a> is hosted on <a href="/trackingBookmarklet.js">https://xmr-amzn.github.io/trackingBookmarklet.js</a>, this is simple javascript to extract the Amazon Order ID and Tracking number from the Amazon Track Package page.</p>
+        <p>This would eventually be hosted on XMR Bazaar. It could be modified to POST this information directly to XMR Bazaar.</p>
+        <p>With the XMR Bazaar user already logged in (in another tab), the server would process the POST request from teh bookmarklet, lookup the Amazon Order ID (previously provided by the buyer when they purchased the items), then import/update the Tracking number.</p>
+      </section>
+
+      <h2 id="user-notes">User Notes</h2>
+      <p>Notes related to XMR Bazaar users.</p>
+
+      <section id="definitions">
+        <h3>Definitions</h3>
+        <p>The "Shopper" is the person wanting to pay Monero for items on Amazon. They build their wishlist on Amazon and create an XMR Bazaar listing requesting someone purchase their items using fiat in exchange for Monero.</p>
+        <p>The "Earner" (or "Buyer") is the person who accepts the XMR Bazaar listing and purchases the Amazon items using fiat. When the items are delivered, they receive Monero from the Shopper.</p>
+      </section>
+
+    </div>
+  </main>
+  <footer></footer>
+  <div id="popup"></div>
+  <div id="popgray"></div>
+</body>
+</html>

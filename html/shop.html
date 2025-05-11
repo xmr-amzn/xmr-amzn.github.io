@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+  <link rel="icon" sizes="128x128" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <title>XMR & Amazon</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div id="content">
+      <h1>Shop Amazon with Monero</h1>
+      <p>Below are the steps to create a listing on <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a> that offers to pay Monero to another user who purchases your item(s) via Amazon. The buyer pays fiat and receives Monero once the item is delivered.</p>
+      <ol class="xl1">
+        <li><a href="#createWishlist">Create an Amazon wishlist</a></li>
+        <ol class="xl2">
+          <li><a href="#shippingAddress">Shipping Address</a></li>
+          <li><a href="#wishlistSettings">Wishlist Settings</a></li>
+        </ol>
+        <li><a href="#addItemsToWishlist">Add items to your Wishlist</a></li>
+        <ol class="xl2">
+          <li><a href="#wishlistOptions">Wishlist Options</a></li>
+        </ol>
+        <li><a href="#createXMRBazaar">Create XMR Bazaar listing</a></li>
+        <ol class="xl2">
+          <li><a href="#determinePrice">Determine Price</a></li>
+          <li><a href="#createProductImage">Create Product Image</a></li>
+          <li><a href="#createListing">Create Listing</a></li>
+        </ol>
+        <li><a href="#acceptOffer">Accept Offer</a></li>
+        <ol class="xl2">
+          <li><a href="#requestTracking">Request Tracking</a></li>
+        </ol>
+        <li><a href="#confirmSend">Confirm Delivery & Send XMR</a></li>
+        <ol class="xl2">
+          <li><a href="#leaveReview">Leave a Review</a></li>
+        </ol>
+      </ol>
+
+      <h2 id="createWishlist">Create an Amazon Wishlist</h2>
+      <div class="dent">
+        To allow others to purchase specific items, you must create a shared wishlist on Amazon.
+      </div>
+
+      <h3 id="shippingAddress">Shipping Address</h3>
+      <div class="dent">
+        Before setting up the wishlist, you can optionally configure an alternate shipping identity.
+        <p>For additional privacy, you can create a new address to obscure your real name, and/or location. You could also setup a 3rd party "virtual mailbox" that accepts packages, or choose an <a href="https://www.amazon.com/ulp" target="_blank">Amazon Locker/Counter</a> location to pickup packages.</p>
+        <p>Minimally, you could create a new address with your XMR Bazaar username so buyers are assured they're shipping to the correct user.</p>
+        <ol>
+          <li>View, Edit, & Add your Amazon addresses here <a href="https://www.amazon.com/a/addresses" target="_blank">https://www.amazon.com/a/addresses</a>.</li>
+          <li>Enter your desired name (viewable by others) and a valid shipping address. Only the city, state, and country are visible by others.</li>
+        </ol>
+        <img src="newaddress.png" class="mini" />
+      </div>
+
+      <h3 id="wishlistSettings">Wishlist Settings</h3>
+      <div class="dent">
+        It is recommended to create a wishlist for each *active* XMR Bazaar listing. Once the XMR Bazaar transaction is complete, you may reuse the wishlist for another listing. If you have multiple active listings on XMR Bazaar, creating a separate wishlist is recommended to avoid confusion & visibility between listings. <a href="#" class="popup" data="reusable-wishlists"><img class="dev" src="gears.svg" /></a>
+        <ol>
+          <li>Visit <a href="https://www.amazon.com/hz/wishlist/ls" target="_blank">https://www.amazon.com/hz/wishlist/ls</a>.</li>
+          <li>"Create a List"</li>
+          <li>Enter a "List Name"</li>
+        </ol>
+        <img src="newlist.png" class="mini" />
+        <p>Then manage the list by hovering the three-dots in the top right of new the wishlist...</p>
+        <img src="managelist.png" class="mini" />
+        <p>This will load the wishlist settings...</p>
+        <img src="modifylist.png" class="mini" />
+        <ol>
+          <li>Change "Privacy" to "Shared".</li>
+          <li>Disable Alexa access.</li>
+          <li>Change "List is For" to "An organization". This will let you enter an alternate name and disable birthdates.</li>
+          <li>Enter your XMR Bazaar username in "Recipient" field.</li>
+          <li>Select a shipping address (from your Amazon shipping addresses).</li>
+          <li>Uncheck "Don't spoil my surprises" so you can verify when an item has been ordered from your list.</li>
+        </ol>
+        <p>Note: Do not "Share your shipping address with sellers". You can only purchase items shipped by Amazon. If you enable 3rd party sellers, Amazon will share your address with the seller, and buyer. Use at your own risk!</p>
+      </div>
+  
+      <h2 id="addItemsToWishlist">Add items to your Wishlist</h2>
+      <div class="dent">
+        You may now browse Amazon normally, and add items to your new wishlist. Instead of "Add to Cart", choose "Add to List" at the bottom of the pricing panel.
+        <p><img src="addtolist.png" class="mini" /></p>
+        From experience, items must be...
+        <ul>
+          <li>Shipped by Amazon (no 3rd party sellers)</li>
+          <li>"New" or "Refurbished" only (no "Used" items)</li>
+          <li>No "Subscribe & Save" items (select "One-Time Purchase" when adding to wishlist)</li>
+          <li>No Lightning Deals</li>
+          <li>No Digital Downloads</li>
+          <li>No Items that link to the purchaser's account (like Alexa/Echo, Kindle, or FireTV devices)</li>
+        </ul>
+        <p>This list is only from past experience. Of course, you can experiment with these types of items and <a href="https://github.com/xmr-amzn/xmr-amzn.github.io/discussions" target="_blank">report your results</a>.</p>
+      </div>
+
+      <h3 id="wishlistOptions">Wishlist Options</h3>
+      <div class="dent">
+        If you need multiple quantities of a wishlist item or wish to add a note, you can view your wishlist by clicking "Add a note" for the desired item.</p>
+        <img src="editWishlist.png" class="mini" />
+        <p>You can then adjust quantities by changing "Needs" to your desired quantity.</p>
+        <img src="wishlistQuantity.png" class="mini" />
+        <p>Note: This is how you can verify if someone has ordered an item for you. "Needs" will decrement to prevent others from purchasing more than you have specified. If you wanted "1", and it shows "0", someone has purchased the item for you. <a href="#" class="popup" data="detecting-purchases"><img class="dev" src="gears.svg" /></a></p>
+      </div>
+
+      <h2 id="createXMRBazaar">Create an XMR Bazaar listing</h2>
+      <div class="dent">
+        Once your wishlist is created and contains the items you wish to purchase, you can create an XMR Bazaar listing requesting someone purchase these items in exchange for Monero.
+      </div>
+
+      <h3 id="determinePrice">Determine Price</h3>
+      <div class="dent">
+        Estimate the fiat price of the listing by adding up the items in your wishlist. Plus tax. Plus shipping. This is to let the buyer know how much fiat they will pay.
+        <p>There may be different prices & shipping depending if you have Amazon Prime (or the buyer has Prime). The idea is to come up with a fiat price for anyone who might buy your items. <a href="#" class="popup" data="calc-wishlist"><img class="dev" src="gears.svg" /></a></p>
+        <p>You can simulate an order by adding all items to your cart and proceed to checkout to have Amazon calulate the order total (just before you submit the order).</p>
+        <img src="ordertotal.png" class="mini" />
+        Once you know approximately what the user will pay, you can use this amount to determine your discount and how much XMR you're willing to pay for your listing.
+      </div>
+
+      <h3 id="createProductImage">Create Product Image</h3>
+      <div class="dent">
+        <p>Currently, XMR Bazaar displays a product image for users browsing listings. You can create your own image of your product(s), or use a generic image (like below) that conveys the listing offers non-KYC Monero for purchasing items on your wishlist.</p>
+        <img src="thumbnail.png" class="mini" />
+        <p>Eventually, the thumbnail image will be less necessary as buyers won't be concerned with what they purchase for you, but what is the right amount and the best deal for them. <a href="#" class="popup" data="browsing-wishlists"><img class="dev" src="gears.svg" /></a></p>
+      </div>
+
+      <h3 id="createListing">Create Listing</h3>
+      <div class="dent">
+        <p>Visit XMR Bazaar's <a href="https://xmrbazaar.com/new-listing/" target="_blank">New Listing</a> page. Select "<a href="https://xmrbazaar.com/new-listing/buying/" target="_blank">Spend Monero</a>", then "<a href="https://xmrbazaar.com/new-listing/buying/buy-product/" target="_blank">Post a Wanted Ad</a>" <a href="#" class="popup" data="listing-type"><img class="dev" src="gears.svg" /></a>. This will bring you to the New Listing form...</p>
+        <img src="newlisting.png" class="mini" />
+        <ol>
+          <li>Be sure to include your Amazon wishlist url in the description (copy the Amazon URL when viewing your wishlist).</li>
+          <li>"Price" is the price you're willing to pay in XMR. If you would like a 10% discount, enter the discounted price here (based on the fiat price above).</li>
+          <li>Select "Physical Delivery"</li>
+          <li>Select payment method (Direct / Escrow)</li>
+        </ol>
+        If price is listed in fiat, the XMR amount will be calculated at the time the offer is accepted.
+        <p>This text has worked for me in the past...</p>
+        <form class="example">
+          <label>Title : </label> <input type="text" value="Buy me a <thing> on Amazon" /><br/>
+            <label>Description : </label> <textarea>Earn some Monero. Purchase from Amazon and I'll send you XMR when the item is delivered (to me).
+
+✅ Add to cart from my wishlist. (<wishlist url>)
+✅ Check "This is a Gift" in your cart.
+✅ And ship to my (m3c's) gift registry address. 
+              
+Once the item ships, retrieve the tracking number using this bookmarklet (https://xmr-amzn.github.io/earn#getTracking) on Amazon's "Track Package" page. Message me the tracking number to verify shipment.
+              
+I'm looking for a small (10%) discount for my hard earned XMR (otherwise, I'd purchase with fiat). This item is $97.41 with tax. You will receive $87.67 in XMR.</textarea><br/>
+              <label>City : </label> <input type="text" value="Shipped by Amazon"/>
+        </form>
+        <p>Publish your listing and wait for someone to make an offer. <a href="#" class="popup" data="simplified-listing"><img class="dev" src="gears.svg" /></a></p>
+      </div>
+
+      <h2 id="acceptOffer">Accept Offer</h2>
+      <div class="dent">
+        <p>When someone makes an offer to purchase your wishlist item(s), accept the offer and request they send the tracking number once the item ships.</p>
+        <img src="acceptOffer.png" class="mini" />
+
+        <p>Do not send payment until your item(s) are delivered. <a href="#" class="popup" data="order-status"><img class="dev" src="gears.svg" /></a></p>
+
+        <p>This is the moment where the Monero amount is "locked in". Note the amount you will be paying when the transaction is complete.</p>
+        <p>This is an opportunity to note how timely they purchase the items and if they follow up with a tracking number.</p>
+        <p>Allow several days for the item to ship. Depending on the item, it can take up to a week for Amazon to ship the item.</p>
+        <p>You can monitor your wishlist to see if quantities change. If you requested 1 item, when they purchase, the quantity will change to zero to prevent others from buying more than you specified. Unchecking "<a href="/shop#wishlistSettings">Don't spoil my surprises</a>" enables this "feature".</p>
+        <p>If the user fails to purchase your items, you can reject the offer and wait for another user to make an offer to purchase. <b>Please communicate with the buyer to confirm before rejecting the offer.</b> If the item was shipped, and cannot be recalled, you are still responsible for sending XMR when you receive the item.</p>
+      </div>
+
+      <h3 id="requestTracking">Tracking Number</h3>
+      <div class="dent">
+        The buyer will receive an email from Amazon when the item ships. They should add this to the XMR Bazaar Order Detail page (found via <a href="https://xmrbazaar.com/my-purchases/" target="_blank">My Purchases</a>).
+        <p>If they have problems getting the tracking number from Amazon, you can mention <a href="/earn#getTracking">https://xmr-amzn.github.io/earn#getTracking</a> for instructions.</p>
+        <p>Once you have the tracking number, you can track via the shipping provider's website (UPS, Fedex, etc.). Sites like <a href="https://www.aftership.com/track" target="_blank">AfterShip</a> or <a href="https://parcelsapp.com/" target="_blank">Parcels</a> can help determine which shipping provider was used.</p>
+      </div>
+
+      <h2 id="confirmSend">Confirm Delivery / Send XMR</h2>
+      <div class="dent">
+        Once the item is delivered, the buyer has performed their part of the tranaction and should be paid their XMR. After sending XMR, paste the transaction ID and Key into the order record.
+        <img src="sendPayment.png" class="mini" />
+        <p>Any issues with the item (wrong item, damaged, missing parts, etc.) must be handled through Amazon. You should have a gift receipt in the box with instructions to return your gift. If not start here <a href="https://www.amazon.com/returns" target="_blank">https://www.amazon.com/returns</a>. Amazon will return the item and credit your account with the amount of the purchase.</p>
+      </div>
+
+      <h3 id="leaveReview">Transaction Complete!</h3>
+      <div class="dent">
+        Leave a positive review if everything went well.
+<!--
+        <p>Also consider sending a small donation to XMR Bazaar for making the transaction possible. XMR Bazaar does not charge any fees for using the website.</p>
+-->
+      </div>
+
+    </div>
+  </main>
+  <footer></footer>
+  <div id="popup"></div>
+  <div id="popgray"></div>
+</body>
+</html>

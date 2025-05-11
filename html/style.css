@@ -30,7 +30,7 @@ ol.xl1 { padding-left: 1rem; color: slategray; background: lightsteelblue; paddi
 ol.xl1 li { margin: 5px; list-style-position: inside; }
 ol.xl2 { padding-left: 2rem; }
 ol.xl2 li { padding: 2px 5px; margin: 0; list-style: lower-alpha; list-style-position: inside; }
-li a { text-decoration: none; color: black; font-weight: bold; }
+ol[class^='xl'] li a { text-decoration: none; color: black; font-weight: bold; }
 ol.xl2 li a { font-weight: normal; }
 
 div.qst { padding: 10px 5px; border-bottom: 1px solid #c9c6c2; cursor: pointer; }

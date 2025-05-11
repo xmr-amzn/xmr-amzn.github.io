@@ -1,10 +1,50 @@
-<html><body style="font-family: arial,helvetica;">
-This is a bookmarklet to extract tracking numbers from Amazon tracking pages.
-
-<p>Right click this link <a href="javascript:(function(){var jsCode=document.createElement(&apos;script&apos;);jsCode.setAttribute(&apos;src&apos;,&apos;https://xmr-amzn.github.io/trackingBookmarklet.js&apos;);document.body.appendChild(jsCode);}());">Get Tracking Number</a> and add to your bookmarks.</p>
-
-<p>Then visit your Amazon tracking page and select this bookmarklet (from your bookmarks).</p>
-
-- <a href="https://github.com/xmr-amzn">m3c</a><br/>
-  (created for <a href="https://xmrbazaar.com/search/earn-xmr/" target="_blank">XMR Bazaar</a>)
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+  <link rel="icon" sizes="128x128" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <title>XMR & Amazon</title>
+</head>
+<body>
+  <header><div class="content">
+    <h1><a href="/" style="text-decoration: none; color: unset;">XMR Bazaar + Amazon</a></h1>
+    <h2>How to purchase from Amazon & earn non-KYC Monero</h2>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/shop">Shop</a></li>
+        <li><a href="/earn">Earn</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/devs">Developers</a></li>
+      </ul>
+    </nav>
+  </div></header>
+  <main>
+    <div id="content">
+      <h1>Earn Monero and shop Amazon using XMR Bazaar</h1>
+      <p>Purse dot io was a brilliant use case for BTC. Giving users the ability to earn non-KYC BTC while offering discounts to users willing to spend BTC on Amazon items. It leveraged Amazon for shipping and delivery confirmation, instead of waiting for users to ship & confirm packages. I was saddened to see it destroyed. I haven't found a suitable replacement until <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a>.</p>
+      <p>I've written this guide to be used "as-is" with the current XMR Bazaar, but I hope these steps can be integrated into XMR Bazaar for a seamless user experience. Of course, everything is open for discussion. This guide is <a href="https://github.com/xmr-amzn">open-sourced on Github</a> for anyone to submit suggestions or updates.</p>
+      <p>I hope this will motivate the developers to build "wishlist purchasing" into XMR Bazaar so users can earn non-KYC Monero and receive discounts when purchasing products with Monero.</p>
+      <div class="action">
+      <p>Click <a class="button" href="/shop">Shop</a> to learn how to order items on Amazon using XMR Bazaar & pay with Monero. </p>
+      <p>Click <a class="button" href="/earn">Earn</a> to learn how to earn non-KYC Monero by purchasing wishlist items for other XMR Bazaar users via Amazon.</p>
+      </div>
+      <p>Being a retired developer, I've added notes to integrate the process into XMR Bazaar. Clicking the "dev icon" (<a href="#" class="popup" data="definitions"><img class="dev" src="gears.svg" /></a>) will provide context-sensitive popups to more details, pros & cons, and mock-up suggestions how to make XMR Bazaar even better by integrating wishlist purchasing using Monero.</p>
+      <p>Thanks to Doug for taking the initiative to create <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a>, and the devs & admins for keeping everything running.</p>
+      <p>- Cameron (<a href="https://xmrbazaar.com/user/m3c" target="_blank">m3c</a>)</p>
+    </div>
+  </main>
+  <footer><div class="content">
+    <a href="#">Donations Welcome</a>
+    <div><img src="qrxmr.png" />8BFmjJmgz7YM7WTt7zJcMYaLdCWyLZ7nPV2NTwkVeiw48k6QMi2un8zXGDPaLVPF8EWVUNN4thyeZU4CRzNLwd35UbsoHmJ</div>
+  </div></footer>
+  <div id="popup"></div>
+  <div id="popgray"></div>
+</body>
+</html>

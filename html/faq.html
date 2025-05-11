@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="128x128" href="favicon.png">
+  <link rel="icon" sizes="128x128" href="favicon.png">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <title>XMR & Amazon</title>
+</head>
+<body>
+  <header></header>
+  <main>
+    <div id="content">
+      <h1>Common Questions</h1>
+      <p>Here are some questions I had while building this guide. If you have more questions or suggestions, you can post on the <a href="https://github.com/xmr-amzn/xmr-amzn.github.io/discussions" target="_blank">Github Project</a>.</p>
+
+      <h2>General Questions</h2>
+
+      <div class="qst">Why?<img src="arrow.svg" /></div>
+      <div class="ans">
+        I was a huge fan of the now defunct Purse(.io) where you could purchase items on Amazon at a discount with BTC/BCH. While others could earn non-KYC BTC &amp; BCH by purchasing items with fiat.
+        <p>I believe Purse started as a case study, but turned into a valuable way to transact with crypto. It promoted the use of crypto instead of just hodling.</p>
+        <p>I've been searching for a Purse alternative since they shut down in early 2023. Everything I found felt "sketchy" and/or had extremely high fees. <a href="https://xmrbazaar.com/" target="_blank" />XMR Bazaar</a> is the perfect place to match shoppers &amp; earners.</p>
+        <p>I've completed 5 Amazon purchases using XMR Bazaar. Received a 10% discount (at the time) and the Earner has gained 72% since then. A win-win for both parties.</p>
+        <p>I've written this guide to describe how I did it. I hope to help integrate Amazon Wishlists into XMR Bazaar to make it easier &amp; more popular in the future.</p>
+      </div>
+
+      <div class="qst">Is this <b><i>totally</i></b> anonymous?<img src="arrow.svg" /></div>
+      <div class="ans">
+        No.
+        <p>Both participants must have an Amazon account, so Amazon knows who is purchasing the item and where it is being shipped. "Amazon is all knowing" 😨</p>
+        <p>The buyer/earner also has the tracking number, so they know the shopper's zip code (but not their full address).</p>
+        <p>If a shopper wants additional anonynimity, they can ship to a 3rd party mailbox, or use an <a href="https://www.amazon.com/ulp" target="_blank">Amazon Locker/Pickup</a> location.</p>
+      </div>
+
+      <div class="qst">Could XMR Bazaar become an Amazon affiliate to earn commissions?<img src="arrow.svg" /></div>
+      <div class="ans">
+        I don't think so. 
+        <p>The Amazon Affiliate program only pays commissions for "qualifying purchases". They only allow direct purchases via an affiliate link. I don't believe it covers purchase for other people (wishlists), or random items without an affiliate link.</p>
+        <p>You can read more here <a href="https://affiliate-program.amazon.com/help/node" target="_blank">https://affiliate-program.amazon.com/help/node</a></p>
+      </div>
+
+      <br/><h2>Shopper Questions</h2>
+
+      <div class="qst">Can I send payment immediately?<img src="arrow.svg" /></div>
+      <div class="ans">
+        If you trust the buyer's reputation, of course you can choose to send XMR sooner. But it's recommended that you wait until the product has been delivered.
+        <p>There are lots of ways to cheat with Amazon. The buyer can cancel the order before it's delivered. Amazon can recall the package if they detect fraud (if it was purchased with a stolen credit card, gift card, or stolen account/password). It's best to wait until the product is in your hands.</p>
+      </div>
+
+      <div class="qst">How do I track my shipment?<img src="arrow.svg" /></div>
+      <div class="ans">
+        Once the buyer posts the tracking number, you can track based on the shipping provider. I find "native" tracking works best. <a href="https://tools.usps.com/go/TrackConfirmAction_input" target="_blank">United States Postal Service</a>, <a href="https://www.ups.com/track" target="_blank">United Parcel Service</a>, <a href="https://fedex.com/" target="_blank">Federal Express</a>, etc.
+        <p>There are also 3rd part tracking sites to find shippers globally like <a href="https://www.aftership.com/track" target="_blank">AfterShip</a> or <a href="https://parcelsapp.com/" target="_blank">Parcels</a></p>
+        <p><a href="https://track.amazon.com/" target="_blank">Amazon Tracking</a> provides local tracking for items delivered by Amazon (trucks) if the tracking number resembles "TBA350490478526".</p>
+      </div>
+
+      <div class="qst">What if my order is damaged or incorrect?<img src="arrow.svg" /></div>
+      <div class="ans">
+        Once your order is complete, your transaction with the XMR Bazaar user is over. If they ordered the correct item (from your wishlist), you should send their Monero.
+        <p>If you ordered the wrong item, the item was damaged, has missing parts, or just don't like the item you received, you have to request a return from Amazon.</p>
+      </div>
+
+      <div class="qst">How do I return an item?<img src="arrow.svg" /></div>
+      <div class="ans">
+        You should have a gift receipt in the box with instructions for returns via Amazon. If not start here <a href="https://www.amazon.com/returns" target="_blank">https://www.amazon.com/returns</a>. Amazon will return the "gift" and credit your account with the amount of the purchase.
+      </div>
+
+      <br/><h2>Earner Questions</h2>
+
+      <div class="qst">Is the XMR KYC?<img src="arrow.svg" /></div>
+      <div class="ans">
+        No! The shopper pays directly to your XMR address. It's a one-on-one transaction. There is no KYC. Amazon doesn't know you are receiving XMR for purchasing items on a wishlist.
+        <p>Technically, Amazon could scape XMR Bazaar for wishlist urls and deduce the purchase is in exchange for XMR. Ideally, the wishlist url would be protected from public view on XMR Bazaar <a href="#" class="popup" data="private-wishlist"><img class="dev" src="gears.svg" /></a>.</p>
+      </div>
+
+      <div class="qst">How can I get my XMR faster?<img src="arrow.svg" /></div>
+      <div class="ans">
+        It is recommended that the shopper not send XMR until the item is delivered. Amazon can recall the item up to the day of delivery for various reasons (a canceled order, credit card fraud, stolen account, etc.).
+        <p>If you choose a faster shipping option (next day / same day), it will be delivered sooner, meaning you'll get your XMR faster.</p>
+        <p>Of course, if you build a reputation, the shopper may trust that you won't cancel the order during shipment, and may choose to send XMR sooner.</p>
+      </div>
+
+    </div>
+  </main>
+  <footer></footer>
+  <div id="popup"></div>
+  <div id="popgray"></div>
+</body>
+</html>

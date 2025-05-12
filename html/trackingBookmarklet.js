@@ -18,7 +18,7 @@
     if (trackingId) {
       alert("Amazon Order ID: " + amazonOrderId + "\nTracking Number: " + trackingId);
     } else {
-      alert("It looks like the package hasn't shipped (no tracking number found).\nTry again once it has shipped.");
+      alert("It looks like the package hasn't shipped (no tracking number found).\n\nTry again once it has shipped.");
     }
   } catch (error) {
     console.log('Tracking-Bookmarklet Error:', error);

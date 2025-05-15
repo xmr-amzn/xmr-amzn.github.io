@@ -16,11 +16,12 @@
   <main>
     <div id="content">
       <h1>Developers</h1>
-      <p>This page contains notes discussing how Wishlist integration with XMR Bazaar could work. It's recommended to read the <a href="/shop">/shop</a> & <a href="/earn">/earn</a> pages to view these notes in context.</p>
+      <p>This page contains notes discussing how Wishlist integration with XMR Bazaar could work. It's recommended to read the <a class="button" href="/shop">Shop</a> & <a class="button" href="/earn">Earn</a> pages to view these notes in context.</p>
       <ol class="xl1">
         <li><a href="#listing-notes">Listing Notes</a></li>
         <ol class="xl2">
           <li><a href="#listing-type">Create a Wishlist Category</a></li>
+          <li><a href="#wishlist-field">Wishlist Field</a></li>
           <li><a href="#private-wishlist">Private Wishlists</a></li>
           <li><a href="#calc-wishlist">Calculate Wishlist Price</a></li>
           <li><a href="#browsing-wishlists">Browsing Wishlist Items</a></li>
@@ -29,14 +30,16 @@
         </ol>
         <li><a href="#order-notes">Order Notes</a></li>
         <ol class="xl2">
+          <li><a href="#order-fields">Order Fields</a></li>
           <li><a href="#order-status">Order Statuses</a></li>
           <li><a href="#detecting-purchases">Detecting Purchases</a></li>
-          <li><a href="#tracking-number">Tracking/Order Field</a></li>
           <li><a href="#tracking-bookmarklet">Tracking Bookmarklet</a></li>
+          <li><a href="#tracking-number">Tracking Orders</a></li>
         </ol>
-        <li><a href="#user-notes">User Notes</a></li>
+        <li><a href="#misc-notes">Miscellaneous Notes</a></li>
         <ol class="xl2">
           <li><a href="#definitions">Definitions</a></li>
+          <li><a href="#international">International Orders</a></li>
         </ol>
       </ol>
 
@@ -50,6 +53,12 @@
         <p>This new category will display under the "<a href="https://xmrbazaar.com/search/earn-xmr/" target="_blank">Earn XMR</a>" menu as a "Purchase" (i.e. You're purchasing products & also purchasing Monero)</p>
         <img src="earnmenu.png" class="mini"/>
         <p>This new type of listing will contain additional fields for storing wishlist urls, fiat price, & discount(%).</p>
+      </section>
+
+      <section id="wishlist-field">
+        <h3>Wishlist Field</h3>
+        <p>Currently, the shopper has to provide the wishlist url in the listing description.</p>
+        <p>Storing the wishlist URL as it's own data field will provide more flexibility to display the url, and extract product information from the wishlist.</p>
       </section>
 
       <section id="private-wishlist">
@@ -93,9 +102,10 @@
       <section id="simplified-listing">
         <h3>Simplified Listing</h3>
         <p>The Add Listing form can be simplified for wishlist listings.</p>
-        <p>Once they paste a wishlist URL, the description, images, fiat price,  can be automatically generated from the wishlist data.</p>
-        <p>The user would select a discount rate to calculate the monero price.</p>
-        <img src="zzz.png" class="mini"/>
+        <p>Once they paste a wishlist URL, the description, images, & fiat price can be extracted from the wishlist.</p>
+        <p>The user would then select a discount rate for calculating the Monero price (upon acceptance).</p>
+        <p><i>(need a mockup here)</i></p>
+<!--
         wishlist url
         Items / price / Photos (scraped)
         Total Price (calculated)
@@ -106,14 +116,28 @@
         Country (for currency - could be derived from wishlist url (amazon.com, amazon.ca, amazon.uk, etc.))
         payment (direct/escrow/bonded)
         private listing checkbox
+-->
       </section>
 
       <h2 id="order-notes">Order Notes</h2>
-      <p>Notes related to order tracking.</p>
+      <p>Notes related to XMR Bazaar orders.</p>
+
+      <section id="order-fields">
+        <h3>Order Fields</h3>
+        <p>Currently, wishlist order information is done via messages.</p>
+        <p>Give the buyer a way to submit the Amazon Order Number, Delivery date(s), and Tracking number(s).</p>
+        <p>A new order number/delivery date would change the order status to "Ordered".</p>
+        <p>A new tracking number would change the order status to "Shipped".</p>
+        <p>If they enter a valid delivery date, XMR Bazaar could calculate & display when to expect the item on the shopper's dashboard.</p>
+        <p>The tracking field could provide links to package tracking websites like <a href="https://www.aftership.com/track" target="_blank">AfterShip</a> or <a href="https://parcelsapp.com/" target="_blank">Parcels</a></p>
+        <p>Amazon may split orders into multiple shipments. So XMR Bazaar would need to store multiple tracking numbers & delivery dates. Would need to research how multiple tracking numbers correlate to specific items in the order. i.e. What to do if only 1 of 2 packages are delivered. Which may require mediator intervention.</p>
+      </section>
 
       <section id="order-status">
         <h3>Order Status</h3>
-        <p>The current order status goes from "Pending" to "Unpaid" once the order is accepted. This suggests the shopper should pay immediately after accepting the order. Wishlist ordering would have different statuses. I believe this only requires one new status ("Ordered").</p>
+        <p>The current order status goes from "Pending" to "Unpaid" once the order is accepted.</p>
+        <p>This suggests the shopper should pay immediately after accepting the order, which is incorrect.</p>
+        <p>Wishlist ordering would have different statuses. I believe this only requires one new status ("Ordered"). Below is a comparison of the existing order status' and how they would work for Wishlist orders.</p>
         <table class="statuses">
           <tr><th>Wishlist<br/>Status</th><th>Description</th><th>XMR Bazaar<br/>Status</th></tr>
           <tr><td>Active</td><td>New listing</td><td>Active</td></tr>
@@ -124,7 +148,7 @@
           <tr><td>Complete</td><td>Monero Paid / TX Submitted</td><td>Complete</td></tr>
         </table>
         <p>In this sequence, "Unpaid" doesn't happen until the end of the process. I prefer "Delivered" since the shipping company has delivered the package.</p>
-        <p>"Ordered", "Shipped", and "Delivered" statuses might be automatically detectable (Is it a valid amazon order number?, Is it a valid tracking number?, Was the tracking number delivered?), but not critical if the users can validate each other.</p>
+        <p>"Ordered", "Shipped", and "Delivered" statuses might be automatically detectable (i.e. Is it a valid Amazon order number?, Is it a valid tracking number?, Was the tracking number delivered?), but not critical if users can validate each other.</p>
       </section>
 
       <section id="detecting-purchases">
@@ -134,26 +158,31 @@
         <p>Possibly an "enhancement" after wishlist ordering is functional.</p>
       </section>
 
-      <section id="tracking-number">
-        <h3>Tracking/Order Field</h3>
-        <p>Would need to store the Amazon Order ID, and Tracking number updated by the buyer. Currently, these are done via messages.</p>
-        <p>Possibly store a tracking URL, to (later) automatically check delivery status.</p>
-      </section>
-
       <section id="tracking-bookmarklet">
         <h3>Tracking Bookmarklet</h3>
         <p>The <a href="https://en.wikipedia.org/wiki/Bookmarklet" target="_blank">bookmarklet</a> is hosted on <a href="/trackingBookmarklet.js">https://xmr-amzn.github.io/trackingBookmarklet.js</a>, this is simple javascript to extract the Amazon Order ID and Tracking number from the Amazon Track Package page.</p>
         <p>This would eventually be hosted on XMR Bazaar. It could be modified to POST this information directly to XMR Bazaar.</p>
-        <p>With the XMR Bazaar user already logged in (in another tab), the server would process the POST request from teh bookmarklet, lookup the Amazon Order ID (previously provided by the buyer when they purchased the items), then import/update the Tracking number.</p>
+        <p>With the XMR Bazaar user already logged in (on another tab), the server would process the POST request from the bookmarklet, lookup the Amazon Order ID (previously provided by the buyer when they purchased the items), then import/update the Tracking number.</p>
       </section>
 
-      <h2 id="user-notes">User Notes</h2>
-      <p>Notes related to XMR Bazaar users.</p>
+      <section id="tracking-number">
+        <h3>Tracking Orders</h3>
+        <p>Once XMR Bazaar stores the tracking number(s), the server could periodically check shipping status and update the order status to "Delivered".</p>
+      </section>
+
+      <h2 id="misc-notes">Miscellaneous Notes</h2>
+      <p>More Notes...</p>
 
       <section id="definitions">
         <h3>Definitions</h3>
         <p>The "Shopper" is the person wanting to pay Monero for items on Amazon. They build their wishlist on Amazon and create an XMR Bazaar listing requesting someone purchase their items using fiat in exchange for Monero.</p>
         <p>The "Earner" (or "Buyer") is the person who accepts the XMR Bazaar listing and purchases the Amazon items using fiat. When the items are delivered, they receive Monero from the Shopper.</p>
+      </section>
+
+      <section id="international">
+        <h3>International Orders</h3>
+        <p>Amazon shopping operates in ~20 countries. I assume users will figure out if they're shopping on amazon.com, amazon.uk, or amazon.de. Wishlist URLs should include which TLD is being used. Monero pricing would need to be adjusted for each country (USD, GBP, or the Euro).</p>
+        <p>There would likely be slight differences to the Amazon web interface for each country (when it comes to using bookmarklets, or scraping info from wishlist urls).</p>
       </section>
 
     </div>
